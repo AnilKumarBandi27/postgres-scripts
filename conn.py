@@ -69,4 +69,4 @@ def upload_large_file(bucket_name, item_name, file_path):
     finally:
         transfer_mgr.shutdown()
 
-upload_large_file("anil123anil123","connn.py","/conn.py");
+upload_large_file("anil123anil123","sample.py","/sample.py");
