@@ -18,7 +18,7 @@ def get_item(bucket_name, item_name):
     try:
         file = cos.Object(bucket_name, item_name).get()
         txt = str(file["Body"].read().decode('UTF-8'))
-        path = "sample.sql"
+        path = "os.environ['BACKUP_FILE']"
         with open(path, "w") as file:
            file.write(txt)
     except ClientError as be:
@@ -26,5 +26,4 @@ def get_item(bucket_name, item_name):
     except Exception as e:
         print("Unable to retrieve file contents: {0}".format(e))
 
-get_item("anil123anil123","sample.sql");
-
+get_item(os.environ['BACKUP_FILE'],os.environ['BACKUP_FILE');
