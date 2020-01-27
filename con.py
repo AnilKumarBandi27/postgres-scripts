@@ -17,10 +17,14 @@ cos = ibm_boto3.resource("s3",
 def get_item(bucket_name, item_name):
     try:
         file = cos.Object(bucket_name, item_name).get()
-        print(format(file["Body"].read()))
+        txt = str(file["Body"].read().decode('UTF-8'))
+        path = "sample.sql"
+        with open(path, "w") as file:
+           file.write(txt)
     except ClientError as be:
         print("CLIENT ERROR: {0}\n".format(be))
     except Exception as e:
         print("Unable to retrieve file contents: {0}".format(e))
-        
+
 get_item("anil123anil123","sample.sql");
+
