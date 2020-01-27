@@ -3,11 +3,10 @@ import os
 from ibm_botocore.client import Config, ClientError
 
 # Constants for IBM COS values
-COS_ENDPOINT = os.environ['ENDPOINT' ]# "https://s3.us.cloud-object-storage.appdomain.cloud"
-COS_API_KEY_ID = os.environ['API_KEY'] # "uClgWYDiEXBcSAWRSdF29Sq1wr11aCmQy5oEOrEv5VbF"
-COS_AUTH_ENDPOINT = os.environ['AUTH_ENDPOINT'] #"https://iam.cloud.ibm.com/identity/token"
-COS_RESOURCE_CRN = os.environ['RESOURCE_CRN'] #"crn:v1:bluemix:public:cloud-object-storage:global:a/b6c597e9c7804d2b9ab48afbe94726ab:1b09bb96-192c-4d07-b041-b54212b0cc6e::"
-# Create resource
+COS_ENDPOINT = os.environ['ENDPOINT' ]
+COS_API_KEY_ID = os.environ['API_KEY']
+COS_AUTH_ENDPOINT = os.environ['AUTH_ENDPOINT'] 
+COS_RESOURCE_CRN = os.environ['RESOURCE_CRN'] 
 cos = ibm_boto3.resource("s3",
     ibm_api_key_id=COS_API_KEY_ID,
     ibm_service_instance_id=COS_RESOURCE_CRN,
