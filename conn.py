@@ -2,10 +2,10 @@ import ibm_boto3
 from ibm_botocore.client import Config, ClientError
 
 # Constants for IBM COS values
-COS_ENDPOINT = "https://s3.us.cloud-object-storage.appdomain.cloud"
-COS_API_KEY_ID = "uClgWYDiEXBcSAWRSdF29Sq1wr11aCmQy5oEOrEv5VbF"
-COS_AUTH_ENDPOINT = "https://iam.cloud.ibm.com/identity/token"
-COS_RESOURCE_CRN = "crn:v1:bluemix:public:cloud-object-storage:global:a/b6c597e9c7804d2b9ab48afbe94726ab:1b09bb96-192c-4d07-b041-b54212b0cc6e::"
+COS_ENDPOINT = os.environ['ENDPOINT' ]
+COS_API_KEY_ID = os.environ['API_KEY']
+COS_AUTH_ENDPOINT = os.environ['AUTH_ENDPOINT'] 
+COS_RESOURCE_CRN = os.environ['RESOURCE_CRN'] 
 # Create resource
 cos = ibm_boto3.resource("s3",
     ibm_api_key_id=COS_API_KEY_ID,
@@ -69,4 +69,4 @@ def upload_large_file(bucket_name, item_name, file_path):
     finally:
         transfer_mgr.shutdown()
 
-upload_large_file("anil123anil123","sample.sql","/sample.sql");
+upload_large_file(os.environ['BUCKET_NAME'],os.environ['BACKUP_FILE'],os.environ['BACKUP_FILE']);
