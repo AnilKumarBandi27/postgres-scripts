@@ -26,4 +26,4 @@ def get_item(bucket_name, item_name):
     except Exception as e:
         print("Unable to retrieve file contents: {0}".format(e))
 
-get_item(os.environ['BACKUP_FILE'],os.environ['BACKUP_FILE']);
+get_item(os.environ['BUCKET_NAME'],os.environ['BACKUP_FILE']);
