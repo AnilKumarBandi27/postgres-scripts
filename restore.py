@@ -18,7 +18,7 @@ def get_item(bucket_name, item_name):
     try:
         file = cos.Object(bucket_name, item_name).get()
         txt = str(file["Body"].read().decode('UTF-8'))
-        path = os.environ['BACKUP_FILE']
+        path = "databackup.sql"
         with open(path, "w") as file:
            file.write(txt)
     except ClientError as be:
