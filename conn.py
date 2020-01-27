@@ -1,4 +1,5 @@
 import ibm_boto3
+import os
 from ibm_botocore.client import Config, ClientError
 
 # Constants for IBM COS values
