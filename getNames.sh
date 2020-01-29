@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 IFS=';' read -ra NAMES <<< "$STR"    #Convert string to array
 
