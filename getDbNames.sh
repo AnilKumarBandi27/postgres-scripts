@@ -1,14 +1,10 @@
 #!/bin/bash  
-#Example for bash split string without $IFS  
+#Example to split a string using trim (tr) command  
   
-read -p "Enter any string separated by colon(:) " str #reading string value  
+my_str="We;welcome;you;on;javatpoint."  
+my_arr=($(echo $my_str | tr ";""\n"))  
   
-readarray -d : -t strarr <<<"$str" #split a string based on the delimiter ':'  
-  
-printf "\n"  
-  
-#Print each value of Array with the help of loop  
-for (( n=0; n < ${#strarr[*]}; n++ ))  
+for i in "${my_arr[@]}"  
 do  
-echo "${strarr[n]}"  
+echo $i  
 done  
