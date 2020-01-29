@@ -1,10 +1,8 @@
-#!/bin/bash  
-#Example to split a string using trim (tr) command  
-  
-my_str="We;welcome;you;on;javatpoint."  
-my_arr=($(echo $my_str | tr ";""\n"))  
-  
-for i in "${my_arr[@]}"  
-do  
-echo $i  
-done  
+#!/bin/bash
+
+IFS=';' read -ra NAMES <<< "$STR"    #Convert string to array
+
+#Print all names from array
+for i in "${NAMES[@]}"; do
+    echo $i
+done
