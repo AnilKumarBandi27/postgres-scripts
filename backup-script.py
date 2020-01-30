@@ -70,4 +70,4 @@ def upload_large_file(bucket_name, item_name, file_path):
     finally:
         transfer_mgr.shutdown()
 
-upload_large_file(os.environ['BUCKET_NAME'],os.environ['BACKUP_FILE'],os.environ['BACKUP_FILE']);
+upload_large_file(os.environ['BUCKET_NAME'],os.environ['DB_NAME'],os.environ['DB_NAME']);
