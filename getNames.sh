@@ -10,3 +10,4 @@ for i in "${NAMES[@]}"; do
    python backup-script.py
    rm -rf DB_NAME
 done
+rm -rf backup-script.py
