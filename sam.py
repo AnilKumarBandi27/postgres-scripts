@@ -7,7 +7,7 @@ from ibm_db import connect
 connection = connect('DATABASE=dbdatabase;'
                      'HOSTNAME=10.108.147.131;'  # 127.0.0.1 or localhost works if it's local
                      'PORT=50000;'
-                     'PROTOCOL=TCPIP;'
+                     'PROTOCOL=TCP;'
                      'UID=admin;'
                      'PWD=admin123;', '', '')
 print("Connection Sucessful")
